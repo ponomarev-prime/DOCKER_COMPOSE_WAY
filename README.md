@@ -4,6 +4,10 @@ Just for fun!
 
 Practice in docker compose.
 
+## Commands
+
+`docker stop $(docker ps -aq)`
+
 ## DRAFT
 
 ```
@@ -35,12 +39,11 @@ Docker Compose version v2.15.1
 
 ```
 PS C:\Users\ponom\Documents\CODE\DOCKER_COMPOSE_WAY> docker compose ps
-NAME                           IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS
-docker_compose_way-adminer-1   adminer             "entrypoint.sh php -…"   adminer             5 minutes ago       Up 31 seconds       0.0.0.0:8080->8080/tcp
-docker_compose_way-db-1        postgres            "docker-entrypoint.s…"   db                  5 minutes ago       Up 31 seconds       5432/tcp
-docker_compose_way-nginx-1     nginx               "/docker-entrypoint.…"   nginx               33 seconds ago      Up 30 seconds       80/tcp, 0.0.0.0:8081->8081/tcp
-docker_compose_way-py-1        python:3.11         "python app/app.py"      py                  5 minutes ago       Up 30 seconds
-docker_compose_way_app_1       python:3.11         "python app/app.py"      app                 24 minutes ago      Up 24 minutes
+NAME                           IMAGE                   COMMAND                  SERVICE             CREATED              STATUS              PORTS
+docker_compose_way-adminer-1   adminer                 "entrypoint.sh php -…"   adminer             10 minutes ago       Up About a minute   0.0.0.0:8080->8080/tcp
+docker_compose_way-db-1        postgres                "docker-entrypoint.s…"   db                  10 minutes ago       Up About a minute   5432/tcp
+docker_compose_way-nginx-1     nginx                   "/docker-entrypoint.…"   nginx               About a minute ago   Up About a minute   80/tcp, 0.0.0.0:8081->8081/tcp
+docker_compose_way-py-1        docker_compose_way-py   "uvicorn main:app --…"   py                  About a minute ago   Up About a minute   0.0.0.0:8000->8000/tcp
 ```
 
 Ваш файл docker-compose.yml выглядит правильным, но есть несколько замечаний:
