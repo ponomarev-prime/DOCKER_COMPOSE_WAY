@@ -4,6 +4,8 @@ Just for fun!
 
 Practice in docker compose.
 
+**PYTHON + POSTGRACE + ADMINER + NGINX + CERTBOT**
+
 ## Commands
 
 `docker stop $(docker ps -aq)`
