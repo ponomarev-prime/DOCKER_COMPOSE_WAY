@@ -46,6 +46,18 @@ docker_compose_way-nginx-1     nginx                   "/docker-entrypoint.…" 
 docker_compose_way-py-1        docker_compose_way-py   "uvicorn main:app --…"   py                  About a minute ago   Up About a minute   0.0.0.0:8000->8000/tcp
 ```
 
+Добавил внутренюю сеть: `my-network`, а ещё изменил порты:
+```
+PS C:\Users\ponom\Documents\CODE\DOCKER_COMPOSE_WAY> docker compose ps
+NAME                           IMAGE                   COMMAND                  SERVICE             CREATED             STATUS              PORTS
+docker_compose_way-adminer-1   adminer                 "entrypoint.sh php -…"   adminer             4 minutes ago       Up 28 seconds       8080/tcp
+docker_compose_way-db-1        postgres                "docker-entrypoint.s…"   db                  4 minutes ago       Up 2 minutes        5432/tcp
+docker_compose_way-nginx-1     nginx                   "/docker-entrypoint.…"   nginx               30 seconds ago      Up 27 seconds       0.0.0.0:80->80/tcp
+docker_compose_way-py-1        docker_compose_way-py   "uvicorn main:app --…"   py                  30 seconds ago      Up 28 seconds
+```
+
+favicon.ico
+
 Ваш файл docker-compose.yml выглядит правильным, но есть несколько замечаний:
 
 В разделе nginx порт 8081 привязан только к локальной машине. Если вы хотите, чтобы контейнер был доступен извне, замените "8081:8081" на "0.0.0.0:8081:8081".
